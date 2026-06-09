@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "Campus Notifications Backend",
+    "description": "Use these requests against your local backend after running npm run dev in notification_app_be.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "All Notifications",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/notifications?limit=10&page=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "notifications"],
+          "query": [
+            { "key": "limit", "value": "10" },
+            { "key": "page", "value": "1" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Filter Placement",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/notifications?notification_type=Placement&limit=10&page=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "notifications"],
+          "query": [
+            { "key": "notification_type", "value": "Placement" },
+            { "key": "limit", "value": "10" },
+            { "key": "page", "value": "1" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Priority Inbox Top 10",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/api/notifications/priority?top=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api", "notifications", "priority"],
+          "query": [
+            { "key": "top", "value": "10" }
+          ]
+        }
+      }
+    }
+  ]
+}
